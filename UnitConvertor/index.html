@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Unit Convertor</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#app-section" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="#length-section" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Length</a>
+    <a href="#temp-section" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Temperature</a>
+    <a href="#energy-section" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Energy</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#length-section" class="w3-bar-item w3-button w3-padding-large">Length</a>
+    <a href="#temp-section" class="w3-bar-item w3-button w3-padding-large">Temperature</a>
+    <a href="#energy-section" class="w3-bar-item w3-button w3-padding-large">Energy</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header id="app-section" class="w3-container w3-red w3-center" style="padding: 60px 16px; background-image: url(images/firework-background.jpg)">
+    <div class= "w3-padding-large" style="background-color: red;">
+        <h3 class="w3-margin w3-xxxlarge w3-mobile" align="center">Unit Convertor</h3>
+        <h3>Convert any unit to another unit of the same medium!</h3>
+        <div>
+            <input type="radio" id="length" name="name" checked="checked" onClick="JSFile:SetFields(1);">Length (km to mi)
+            <input type="radio" id="temp" name="name" onClick="JSFile:SetFields(2);">Temperature (C to F)
+            <input type="radio" id="energy" name="name" onClick="JSFile:SetFields(3);">Energy (kJ to kcal)
+        </div>
+        <table align="center">
+            <tr>
+                <td id="SI_unit">Kilometres:</td>
+                <td><input type="text" id="si"></td>
+            </tr>
+            <tr>
+                <td id="Imp_unit">Miles:</td>
+                <td><input type="text" id="imp"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="convert" value="Convert" class="w3-button w3-black w3-padding-large w3-large w3-margin-top"></td>
+                <td><input type="button" id="reset" onClick="JSFile:SetFields(1)" value="Reset" class="w3-button w3-black w3-padding-large w3-large w3-margin-top"></td>
+            </tr>
+        </table>
+        <hr>
+        <h3 id="result"></h3>
+    </div>
+</header>
+
+<!-- First Grid -->
+<div id="length-section" class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Length</h1>
+      <h5 class="w3-padding-32">Length is a measure of distance. In the International System of Quantities, length is a quantity with dimension distance. In most systems of measurement a base unit for length is chosen, from which all other units are derived. In the International System of Units (SI) system the base unit for length is the metre.</h5>
+
+      <p class="w3-text-grey">A metre has been officially defined to be the distance traveled by light in a vacuum in 1/299,792,458 second. All other length and distance measurements in the metric system derive from the meter (eg. km= 1000m, 1m= 1000mm).<br>&#9;Imperial / American measurements have a less logical progression. A yard can be defined as the length of a pendulum that causes its arc to swing in exactly 1 second. The Nautical mile is the distance across 1' (1/60 of a degree) around the earths surface.
+      For more information, visit <a href="https://www.metric-conversions.org/length-conversion.htm">metric-conversions.org</a>
+      </p>
+    </div>
+
+    <div class="w3-third w3-center">
+      <img src="images/ruler.png" alt="ruler measurement icon" class="w3-padding-64">
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div id="temp-section"class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <img src="images/thermometer1.png" alt="thermometer icon" class="w3-padding-64">
+    </div>
+
+    <div class="w3-twothird">
+      <h1>Temperature</h1>
+      <h5 class="w3-padding-32">Temperature is a physical quantity that expresses hot and cold. It is the manifestation of thermal energy, present in all matter, which is the source of the occurrence of heat, a flow of energy, when a body is in contact with another that is colder or hotter.</h5>
+
+      <p class="w3-text-grey">Although initially defined by the freezing point of water (0℃), the Celsius scale is now officially a derived scale, defined in relation to the Kelvin temperature scale. This means that 100℃, previously defined as the boiling point of water, is now defined as the equivalent to 373.15K.The Celsius scale is an interval system but not a ratio system, meaning it follows a relative scale but not an absolute scale. This can be seen because the temperature interval between 20℃ and 30℃ is the same as between 30℃ and 40℃, but 40℃ does not have twice the air heat energy of 20℃. A temperature difference of 1 deg C is the equivalent of a temperature difference 1.8°F.<br>&#9;Fahrenheit is a thermodynamic temperature scale, where the freezing point of water is 32 degrees Fahrenheit (℉) and the boiling point 212℉ (at standard atmospheric pressure). This puts the boiling and freezing points of water exactly 180 degrees apart. Therefore, a degree on the Fahrenheit scale is 1/180 of the interval between the freezing point and the boiling point of water. Absolute zero is defined as -459.67℉. A temperature difference of 1℉ is the equivalent of a temperature difference 0.556℃. For more information, visit <a href="https://www.metric-conversions.org/temperature-conversion.htm">metric-conversions.org</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Third Grid -->
+<div id="energy-section" class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-twothird">
+        <h1>Energy</h1>
+        <h5 class="w3-padding-32">Energy, in physics, the capacity for doing work. It may exist in potential, kinetic, thermal, electrical, chemical, nuclear, or other various forms. There are, moreover, heat and work—i.e., energy in the process of transfer from one body to another. After it has been transferred, energy is always designated according to its nature. Hence, heat transferred may become thermal energy, while work done may manifest itself in the form of mechanical energy.</h5>
+  
+        <p class="w3-text-grey">One Joule is 1 Newton Metre, ie the work done or energy transfered to an object when a one Newton force acts on it over one metre. A person at rest typically generates about 60 joules of heat per minute. For more information, visit <a href="https://www.metric-conversions.org/energy-and-power/calories-conversion.htm">metric-conversions.org</a></p>
+      </div>
+  
+      <div class="w3-third w3-center">
+        <img src="images/fire.png" alt="fire icon" class="w3-padding-64">
+      </div>
+    </div>
+  </div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Useful Formulae</h1>
+    <div class="w3-third">
+      <h6>s=ut+(a(t)^2)/2</h6>
+      <p class="w3-text-grey">s=distance, u=speed, t=time, a=acceleration</p>
+    </div>
+    <div class="w3-third">
+      <h6>θ=T-273.15</h6>
+      <p class="w3-text-grey">θ=temperature in Celcius, T=temperature in Kelvin</p>
+    </div>
+    <div class="w3-third">
+      <h6>E = m(c)^2</h6>
+      <p class="w3-text-grey">E=energy, m=mass, c=speed of light in a vacuum</p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script type="text/javascript" src="jscripts/myScript.js"></script>
+
+</body>
+</html>
